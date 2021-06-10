@@ -3,19 +3,19 @@ package coding.challenge.good;
 import java.util.List;
 
 public class AreaCalculator {
- 
-    private final List<Shape> shapes;
 
-    public AreaCalculator(List<Shape> shapes) {
-        this.shapes = shapes;
-    }
+	private final List<Shape> shapes;
 
-    public double sum() {
-        int sum = 0;
-        for (Shape shape : shapes) {
-            sum += shape.area();
-        }
+	public AreaCalculator( List<Shape> shapes ) {
+		this.shapes = shapes;
+	}
 
-        return sum;
-    }
+	public double sum() {
+		int sum = 0;
+		for ( Shape shape : shapes ) {
+			sum += shape.area();
+		}
+
+		return sum;
+	}
 }

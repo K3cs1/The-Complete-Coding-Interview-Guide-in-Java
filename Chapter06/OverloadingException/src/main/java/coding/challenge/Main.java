@@ -4,26 +4,26 @@ import java.sql.SQLException;
 
 public class Main {
 
-    public static void main(String[] args) {
+	public static void main( String[] args ) {
 
-        Clazz clazz = new Clazz();
+		Clazz clazz = new Clazz();
 
-        clazz.foo("Foozzy");
-        
-        System.out.println();
+		clazz.foo( "Foozzy" );
 
-        try {
-            clazz.foo();
-        } catch (SQLException ex) {
-            System.err.println(ex);
-        }
-        
-        System.out.println();
+		System.out.println();
 
-        try {
-            clazz.foo(1);
-        } catch (RuntimeException ex) {
-            System.err.println(ex);
-        }
-    }
+		try {
+			clazz.foo();
+		} catch ( SQLException ex ) {
+			System.err.println( ex );
+		}
+
+		System.out.println();
+
+		try {
+			clazz.foo( 1 );
+		} catch ( RuntimeException ex ) {
+			System.err.println( ex );
+		}
+	}
 }

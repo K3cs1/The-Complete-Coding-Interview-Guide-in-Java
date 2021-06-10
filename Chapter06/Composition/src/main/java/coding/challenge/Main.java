@@ -2,11 +2,10 @@ package coding.challenge;
 
 public class Main {
 
-    public static void main(String[] args) {
+	public static void main( String[] args ) {
+		Car car = new Car( "MyCar" );
 
-        Car car = new Car("MyCar");
-        
-        System.out.println("Horsepower: " + car.getHorsepower());
-    }
+		System.out.println( "Horsepower: " + car.getHorsepower() );
+	}
 
 }

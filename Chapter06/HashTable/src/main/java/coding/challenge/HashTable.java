@@ -1,71 +1,71 @@
 package coding.challenge;
 
 public class HashTable<K, V> {
- 
-    private static final int SIZE = 10;
 
-    private static class HashEntry<K, V> {
+	private static final int SIZE = 10;
 
-        K key;
-        V value;
+	private static class HashEntry<K, V> {
 
-        HashEntry<K, V> next;
+		K key;
+		V value;
 
-        HashEntry(K k, V v) {
-            this.key = k;
-            this.value = v;
-            this.next = null;
-        }
+		HashEntry<K, V> next;
 
-        @Override
-        public String toString() {
-            return "HashEntry{" + "key=" + key + ", value=" + value + ", next=" + next + '}';
-        }
+		HashEntry( K k, V v ) {
+			this.key = k;
+			this.value = v;
+			this.next = null;
+		}
 
-    }
+		@Override
+		public String toString() {
+			return "HashEntry{" + "key=" + key + ", value=" + value + ", next=" + next + '}';
+		}
 
-    private final HashEntry[] entries = new HashEntry[SIZE];
+	}
 
-    public void put(K key, V value) {
+	private final HashEntry[] entries = new HashEntry[ SIZE ];
 
-        int hash = getHash(key);
-        
-        final HashEntry hashEntry = new HashEntry(key, value);
+	public void put( K key, V value ) {
 
-        if (entries[hash] == null) {
-            entries[hash] = hashEntry;
-        } else { // collision => chaining
-            HashEntry currentEntry = entries[hash];
-            while (currentEntry.next != null) {
-                currentEntry = currentEntry.next;
-            }
+		int hash = getHash( key );
 
-            currentEntry.next = hashEntry;
-        }
-    }
+		final HashEntry hashEntry = new HashEntry( key, value );
 
-    public V get(K key) {
+		if ( entries[ hash ] == null ) {
+			entries[ hash ] = hashEntry;
+		} else { // collision => chaining
+			HashEntry currentEntry = entries[ hash ];
+			while ( currentEntry.next != null ) {
+				currentEntry = currentEntry.next;
+			}
 
-        int hash = getHash(key);
-        
-        if (entries[hash] != null) {
-            HashEntry currentEntry = entries[hash];
+			currentEntry.next = hashEntry;
+		}
+	}
 
-            // Check the entry linked list for matching the given 'key'
-            while (currentEntry != null) {                
+	public V get( K key ) {
 
-                if (currentEntry.key.equals(key)) {
-                    return (V) currentEntry.value;
-                }
-                
-                currentEntry = currentEntry.next;
-            }
-        }
+		int hash = getHash( key );
 
-        return null;
-    }
+		if ( entries[ hash ] != null ) {
+			HashEntry currentEntry = entries[ hash ];
 
-    private int getHash(K key) {        
-        return Math.abs(key.hashCode() % SIZE);
-    }    
+			// Check the entry linked list for matching the given 'key'
+			while ( currentEntry != null ) {
+
+				if ( currentEntry.key.equals( key ) ) {
+					return (V) currentEntry.value;
+				}
+
+				currentEntry = currentEntry.next;
+			}
+		}
+
+		return null;
+	}
+
+	private int getHash( K key ) {
+		return Math.abs( key.hashCode() % SIZE );
+	}
 }

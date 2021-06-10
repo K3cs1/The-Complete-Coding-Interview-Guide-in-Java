@@ -4,36 +4,35 @@ import java.sql.BatchUpdateException;
 import java.sql.SQLException;
 
 public class Main {
+	public static void main( String[] args ) {
 
-    public static void main(String[] args) {
+		Parent p = new Parent();
+		Child c = new Child();
 
-        Parent p = new Parent();
-        Child c = new Child();
+		try {
+			p.foo();
+		} catch ( SQLException ex ) {
+			System.err.println( ex );
+		}
 
-        try {
-            p.foo();
-        } catch (SQLException ex) {
-            System.err.println(ex);
-        }
+		System.out.println();
 
-        System.out.println();
-        
-        try {
-            c.foo();
-        } catch (BatchUpdateException ex) {
-            System.err.println(ex);
-        }
-        
-        System.out.println();
+		try {
+			c.foo();
+		} catch ( BatchUpdateException ex ) {
+			System.err.println( ex );
+		}
 
-        p.buzz();
-        
-        System.out.println();
+		System.out.println();
 
-        try {
-            c.buzz();
-        } catch (RuntimeException ex) {
-            System.err.println(ex);
-        }
-    }
+		p.buzz();
+
+		System.out.println();
+
+		try {
+			c.buzz();
+		} catch ( RuntimeException ex ) {
+			System.err.println( ex );
+		}
+	}
 }

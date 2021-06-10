@@ -6,18 +6,18 @@ import coding.challenge.polymorphism.Concrete;
 
 public class Main {
 
-    public static void main(String[] args) {
+	public static void main( String[] args ) {
 
-        // Method overriding in Inheritance
-        Parent parent = new Parent();
-        Child child = new Child();
+		// Method overriding in Inheritance
+		Parent parent = new Parent();
+		Child child = new Child();
 
-        parent.execute();
-        child.execute();
+		parent.execute();
+		child.execute();
 
-        // Method inheritance in Runtime Polymorphism
-        Concrete concrete = new Concrete();
+		// Method inheritance in Runtime Polymorphism
+		Concrete concrete = new Concrete();
 
-        concrete.execute();
-    }
+		concrete.execute();
+	}
 }

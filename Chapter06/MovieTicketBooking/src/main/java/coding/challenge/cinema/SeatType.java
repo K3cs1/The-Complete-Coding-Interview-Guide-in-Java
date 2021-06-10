@@ -1,16 +1,16 @@
 package coding.challenge.cinema;
 
 public enum SeatType {
- 
-    SIMPLE(1), SILVER(5), GOLD(10);
 
-    private final int price;
+	SIMPLE( 1 ), SILVER( 5 ), GOLD( 10 );
 
-    private SeatType(int price) {
-        this.price = price;
-    }
+	private final int price;
 
-    protected int getPrice() {
-        return price;
-    }
+	private SeatType( int price ) {
+		this.price = price;
+	}
+
+	protected int getPrice() {
+		return price;
+	}
 }

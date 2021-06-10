@@ -1,27 +1,27 @@
 package coding.challenge.filesystem;
 
 public class File extends Item {
- 
-    private String content;
-    private int size;
-    
-    public File(String name, Directory parent) {
 
-        super(name, parent);
-    }
+	private String content;
+	private int size;
 
-    @Override
-    public long size() {
-        return size;
-    }
+	public File( String name, Directory parent ) {
+		super( name, parent );
+	}
 
-    protected void setSize(int size) {
-        this.size = size;
-    }
+	@Override
+	public long size() {
+		return size;
+	}
 
-    public void setContent(String content) {}
+	protected void setSize( int size ) {
+		this.size = size;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public void setContent( String content ) {
+	}
+
+	public String getContent() {
+		return content;
+	}
 }

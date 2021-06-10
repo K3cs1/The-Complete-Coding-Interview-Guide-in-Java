@@ -1,41 +1,41 @@
 package coding.challenge.parking;
- 
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 public final class ParkingTicket {
-    
-    private final Vehicle vehicle;
-    private final LocalDateTime releaseDate;    
-    private final List<String> parkingSpotsLabels;
-    private final String floorName;
 
-    protected ParkingTicket(Vehicle vehicle, List<String> parkingSpotsLabels, String floorName) {       
-        this.vehicle = vehicle;
-        this.parkingSpotsLabels = parkingSpotsLabels;
-        this.floorName = floorName;
-        this.releaseDate = LocalDateTime.now();
-    }    
+	private final Vehicle vehicle;
+	private final LocalDateTime releaseDate;
+	private final List<String> parkingSpotsLabels;
+	private final String floorName;
 
-    protected LocalDateTime getReleaseDate() {
-        return releaseDate;
-    }
+	protected ParkingTicket( Vehicle vehicle, List<String> parkingSpotsLabels, String floorName ) {
+		this.vehicle = vehicle;
+		this.parkingSpotsLabels = parkingSpotsLabels;
+		this.floorName = floorName;
+		this.releaseDate = LocalDateTime.now();
+	}
 
-    public List<String> getParkingSpotsLabels() {
-        return parkingSpotsLabels;
-    }
+	protected LocalDateTime getReleaseDate() {
+		return releaseDate;
+	}
 
-    public String getFloorName() {
-        return floorName;
-    }   
+	public List<String> getParkingSpotsLabels() {
+		return parkingSpotsLabels;
+	}
 
-    protected Vehicle getVehicle() {
-        return vehicle;
-    }        
+	public String getFloorName() {
+		return floorName;
+	}
 
-    @Override
-    public String toString() {
-        return "ParkingTicket{" + "floor=" + getFloorName() + ", spots=" + getParkingSpotsLabels() 
-                + ", vehicle=" + vehicle + ", releaseDate=" + releaseDate + '}';
-    }          
+	protected Vehicle getVehicle() {
+		return vehicle;
+	}
+
+	@Override
+	public String toString() {
+		return "ParkingTicket{" + "floor=" + getFloorName() + ", spots=" + getParkingSpotsLabels()
+				+ ", vehicle=" + vehicle + ", releaseDate=" + releaseDate + '}';
+	}
 }

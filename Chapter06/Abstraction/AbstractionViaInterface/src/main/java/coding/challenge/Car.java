@@ -2,13 +2,13 @@ package coding.challenge;
 
 public interface Car {
 
-    public void speedUp();
+	void speedUp();
 
-    public void slowDown();
+	void slowDown();
 
-    public void turnRight();
+	void turnRight();
 
-    public void turnLeft();
-    
-    public String getCarType();
+	void turnLeft();
+
+	String getCarType();
 }

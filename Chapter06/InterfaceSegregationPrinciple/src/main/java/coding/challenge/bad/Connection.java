@@ -2,9 +2,9 @@ package coding.challenge.bad;
 
 public interface Connection {
 
-    public void socket();
+	void socket();
 
-    public void http();
+	void http();
 
-    public void connect();
+	void connect();
 }
